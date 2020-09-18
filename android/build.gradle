@@ -24,6 +24,9 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
 
+    sourceSets {
+        main.jniLibs.srcDir 'libs'
+    }
     defaultConfig {
         minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -31,4 +34,8 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
