@@ -30,10 +30,7 @@ class Iflytts {
     @required String appID,
   }) async {
     assert(appID != null && appID.isNotEmpty);
-    return _channel.invokeMethod(
-      _METHOD_INITWITHAPPID,
-      appID,
-    );
+    return _channel.invokeMethod(_METHOD_INITWITHAPPID, appID);
   }
 
   Future<void> setParameter(Map<String, dynamic> param) async {
